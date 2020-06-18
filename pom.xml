@@ -12,9 +12,11 @@
 	<artifactId>microcommerce</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>microcommerce</name>
-	<description>Un e-commerce basé sur du MSA réalisé par [Votre ou vos noms si vous êtes en équipe]​ étudiant à IPI</description>
+	<description>Un e-commerce basé sur du MSA réalisé par ...</description>
 
 	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 	</properties>
 
@@ -58,7 +60,23 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-config-client</artifactId>
+		</dependency>
 	</dependencies>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>Greenwich.RELEASE</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 	<build>
 		<plugins>
